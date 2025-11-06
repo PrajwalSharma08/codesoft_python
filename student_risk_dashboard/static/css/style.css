@@ -1,0 +1,99 @@
+/* static/css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    background: #fff;
+    padding: 25px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #1a73e8;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    color: #5f6368;
+    margin-bottom: 30px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+thead th {
+    background-color: #1a73e8;
+    color: white;
+    font-weight: 700;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* --- Risk Color Coding --- */
+.risk-high {
+    background-color: #f8d7da; /* Red */
+    font-weight: bold;
+    color: #721c24;
+}
+.risk-medium {
+    background-color: #fff3cd; /* Yellow */
+}
+.risk-low {
+    background-color: #d4edda; /* Green */
+}
+
+.risk-level {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.notification-container {
+    background: #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.notification-container h2 {
+    margin-top: 0;
+    color: #343a40;
+}
+
+.notification-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.notification-container li {
+    background: #fd7e14;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}

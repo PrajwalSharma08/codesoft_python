@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Risk Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Student At-Risk Dashboard</h1>
+        <p>A consolidated view to identify struggling students for early intervention.</p>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Attendance (%)</th>
+                        <th>Score (%)</th>
+                        <th>Fees Paid</th>
+                        <th>Predicted Risk Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students %}
+                        <tr class="risk-{{ student.RiskLevel.lower() }}">
+                            <td>{{ student.StudentID }}</td>
+                            <td>{{ student.StudentName }}</td>
+                            <td>{{ student.Attendance }}</td>
+                            <td>{{ student.Score }}</td>
+                            <td>{{ student.FeesPaid }}</td>
+                            <td class="risk-level">{{ student.RiskLevel }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="notification-container">
+            <h2>🔔 Notification Log</h2>
+            {% if notifications %}
+                <ul>
+                    {% for notification in notifications %}
+                        <li>{{ notification }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No high-risk alerts at the moment.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
